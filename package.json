@@ -1,7 +1,7 @@
 {
-  "name": "diamonds-boilerplate",
+  "name": "gnus-dao",
   "version": "1.0.0",
-  "description": "ERC-2535 Diamond Proxy Standard Framework",
+  "description": "GNUS-DAO ERC-2535 Diamond Proxy Contracts project",
   "main": "index.ts",
   "scripts": {
     "test": "npx hardhat test",

@@ -1,6 +1,6 @@
 # Diamond Tests
 
->> This directory contains the example tests for a Diamonds project.
+>> This directory contains tests for a Diamonds project.
 
 ## Test Structure
 
@@ -41,7 +41,7 @@ The test files contain a bit of boilerplate code to set up the test environment.
 - **Tests**: The test file contains the actual tests, which are organized into nested `describe` blocks to handle multiple networks. Each test is defined using the `it` function, and assertions are made using Chai's `expect` or `assert` functions.
 - **Imports**: The test file imports the necessary libraries and modules, including Hardhat, Mocha, Chai, Waffle, Ethers, Typechain, and any other dependencies required for the tests. Many of these are standard across all test files.
 - **Network Configuration**: The test file sets up the network configuration using hardhat-multichain and some configuration included in the `hardhat.config.ts`. It also configures for the Hardhat network if no other network is specified. Each network is looped through for each test.
-- **Deployments**: The test file deploys the necessary contracts using the `diamonds` module, with configuration and deployment records in the `diamonds/ExampleDiamond` directory. Deployments (or upgrades) are only done once per network using a Multiton pattern.s
+- **Deployments**: The test file deploys the necessary contracts using the `diamonds` module, with configuration and deployment records in the `diamonds/GNUSDAODiamond` directory. Deployments (or upgrades) are only done once per network using a Multiton pattern.s
 - **Setup**: The test file sets up the most commonly used variable used in tests like accounts and Signed Diamond contracts. This is done using the `before` hooks provided by `Mocha`.
 - **Isolation**: The test file uses `beforeEach` hooks to ensure that each test runs in isolation. This is important for ensuring that tests do not interfere with each other and that the results are consistent.
 - **Assertions**: The test file uses Chai's `expect` or `assert` functions to make assertions about the expected behavior of the contracts being tested. This includes checking the state of the contracts, the values returned by functions, and any events emitted by the contracts.

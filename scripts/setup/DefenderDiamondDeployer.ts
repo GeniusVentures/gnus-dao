@@ -98,7 +98,7 @@ export interface NetworkConfig {
  * @example
  * ```typescript
  * const config: DefenderDiamondDeployerConfig = {
- *   diamondName: 'ExampleDiamond',
+ *   diamondName: 'GNUADAODiamond',
  *   networkName: 'sepolia',
  *   chainId: 11155111,
  *   apiKey: process.env.DEFENDER_API_KEY!,
@@ -107,7 +107,7 @@ export interface NetworkConfig {
  *   via: process.env.DEFENDER_SAFE_ADDRESS!,
  *   viaType: 'Safe',
  *   autoApprove: false,
- *   configFilePath: 'diamonds/ExampleDiamond/examplediamond.config.json'
+ *   configFilePath: 'diamonds/GNUADAODiamond/gnusdaodiamond.config.json'
  * };
  * 
  * const deployer = await DefenderDiamondDeployer.getInstance(config);
@@ -410,7 +410,7 @@ export class DefenderDiamondDeployer {
    */
   public static createConfigFromEnv(overrides: Partial<DefenderDiamondDeployerConfig> = {}): DefenderDiamondDeployerConfig {
     const networkName = overrides.networkName || process.env.NETWORK || 'sepolia';
-    const diamondName = overrides.diamondName || process.env.DIAMOND_NAME || 'ExampleDiamond';
+    const diamondName = overrides.diamondName || process.env.DIAMOND_NAME || 'GNUADAODiamond';
     
     // Load network configuration
     let networkConfig: NetworkConfig;

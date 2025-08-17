@@ -29,7 +29,7 @@ npm install
 3. Configure your environment variables:
 
 ```bash
-cp .env.example .env
+cp .env.GNUADAO .env
 ```
 
 4. Deploy your contracts:

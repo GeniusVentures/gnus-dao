@@ -127,7 +127,7 @@ function genSignature(name: string, inputs: Array<unknown>, type: string): strin
 // 		}
 // 		elementSeenSet.add(funcSignature);
 // 	} else if (abiElement.type === 'fallback') {
-// 		if (!fullyQualifiedName.match('ExampleDiamond.sol')) {
+// 		if (!fullyQualifiedName.match('GNUADAODiamond.sol')) {
 // 			return false;
 // 		}
 // 	}
@@ -382,11 +382,11 @@ const config: HardhatUserConfig = {
 	},
 	diamonds: {
 		paths: {
-			ExampleDiamond: {
+			GNUADAODiamond: {
 				deploymentsPath: 'diamonds',
         // It is recommended but not required to create a separate contracts repo and 
         // include it as a git submodule.
-				contractsPath: 'contracts/examplediamond',
+				contractsPath: 'contracts/GNUADAOdiamond',
 			},
 		},
 	},

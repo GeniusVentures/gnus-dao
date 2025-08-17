@@ -13,14 +13,14 @@ describe("RPCDiamondDeployer", function () {
         sandbox = sinon.createSandbox();
         
         // Set up test environment variables with proper 64-character private key
-        process.env.DIAMOND_NAME = "ExampleDiamond";
+        process.env.DIAMOND_NAME = "GNUSDAODiamond";
         process.env.RPC_URL = "http://localhost:8545";
         process.env.PRIVATE_KEY = "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80";
         process.env.NETWORK_NAME = "localhost";
         process.env.CHAIN_ID = "31337";
         
         config = {
-            diamondName: "ExampleDiamond",
+            diamondName: "GNUSDAODiamond",
             networkName: "localhost",
             chainId: 31337,
             rpcUrl: "http://localhost:8545",
@@ -30,7 +30,7 @@ describe("RPCDiamondDeployer", function () {
             retryDelayMs: 1000,
             verbose: false,
             deploymentsPath: "./deployments-test",
-            configFilePath: "diamonds/ExampleDiamond/examplediamond.config.json",
+            configFilePath: "diamonds/GNUSDAODiamond/gnusdaodiamond.config.json",
             writeDeployedDiamondData: true,
         };
     });
@@ -122,7 +122,7 @@ describe("RPCDiamondDeployer", function () {
         it("should create configuration from environment variables", function () {
             const envConfig = RPCDiamondDeployer.createConfigFromEnv();
 
-            expect(envConfig.diamondName).to.equal("ExampleDiamond");
+            expect(envConfig.diamondName).to.equal("GNUSDAODiamond");
             expect(envConfig.rpcUrl).to.equal("http://localhost:8545");
             expect(envConfig.privateKey).to.equal("0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80");
             expect(envConfig.networkName).to.equal("localhost");
@@ -135,7 +135,7 @@ describe("RPCDiamondDeployer", function () {
                 .to.throw("Missing required environment variable: DIAMOND_NAME");
 
             // Restore for other tests
-            process.env.DIAMOND_NAME = "ExampleDiamond";
+            process.env.DIAMOND_NAME = "GNUSDAODiamond";
         });
 
         it("should apply overrides to environment configuration", function () {

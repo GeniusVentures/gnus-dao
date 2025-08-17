@@ -118,7 +118,7 @@ async function collectMissingConfig(options: ManualDeploymentOptions): Promise<M
   console.log(chalk.blue('='.repeat(40)));
 
   if (!options.diamondName) {
-    options.diamondName = await prompt('Diamond name', 'ExampleDiamond');
+    options.diamondName = await prompt('Diamond name', 'GNUADAODiamond');
   }
 
   if (!options.rpcUrl) {

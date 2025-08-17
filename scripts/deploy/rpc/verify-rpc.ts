@@ -138,9 +138,9 @@ async function compareOnChainState(diamond: any, provider: ethers.JsonRpcProvide
   
   // Get current protocol version if available
   try {
-    const exampleABI = ["function protocolVersion() external view returns (uint256)"];
-    const exampleDiamond = new ethers.Contract(diamondAddress, exampleABI, provider);
-    const protocolVersion = await exampleDiamond.protocolVersion();
+    const gnusDaoABI = ["function protocolVersion() external view returns (uint256)"];
+    const gnusDaoDiamond = new ethers.Contract(diamondAddress, gnusDaoABI, provider);
+    const protocolVersion = await gnusDaoDiamond.protocolVersion();
     console.log(chalk.blue(`📋 On-chain Protocol Version: ${protocolVersion}`));
   } catch (error) {
     console.log(chalk.yellow('⚠️  Protocol version not available on-chain'));

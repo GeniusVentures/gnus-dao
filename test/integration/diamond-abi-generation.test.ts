@@ -7,7 +7,7 @@ import { join } from 'path';
 
 describe('Diamond ABI Integration Tests', () => {
   const testOutputDir = './test-output/diamond-abi';
-  const diamondName = 'ExampleDiamond';
+  const diamondName = 'GNUSDAODiamond';
 
   beforeEach(() => {
     // Clean up any existing test output
@@ -85,7 +85,7 @@ describe('Diamond ABI Integration Tests', () => {
       // Create interface to check for functions
       const iface = new Interface(result.abi);
       
-      // Check for some essential functions that should be in ExampleDiamond
+      // Check for some essential functions that should be in GNUSDAODiamond
       const expectedFunctions = [
         'supportsInterface', // ERC165/DiamondLoupe
       ];
@@ -116,7 +116,7 @@ describe('Diamond ABI Integration Tests', () => {
 
       // Check if TypeChain generated the diamond types
       const expectedTypeFiles = [
-        'diamond-typechain-types/ExampleDiamond.ts',
+        'diamond-typechain-types/GNUSDAODiamond.ts',
         'diamond-typechain-types/index.ts',
         'diamond-typechain-types/common.ts'
       ];
@@ -126,13 +126,13 @@ describe('Diamond ABI Integration Tests', () => {
       }
 
       // Verify the main diamond type file contains expected content
-      const mainTypeFile = 'diamond-typechain-types/ExampleDiamond.ts';
+      const mainTypeFile = 'diamond-typechain-types/GNUSDAODiamond.ts';
       if (existsSync(mainTypeFile)) {
         const content = readFileSync(mainTypeFile, 'utf8');
         
         // Should contain TypeScript interface definition
         expect(content).to.include('export interface');
-        expect(content).to.include('ExampleDiamond');
+        expect(content).to.include('GNUSDAODiamond');
         expect(content).to.include('ethers');
       }
     });

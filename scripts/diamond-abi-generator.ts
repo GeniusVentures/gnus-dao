@@ -308,7 +308,7 @@ export class ProjectDiamondAbiGenerator {
           // Try to load the contract artifact
           const artifactPaths = [
             `./artifacts/contracts/${facetName}.sol/${facetName}.json`,
-            `./artifacts/contracts/examplediamond/${facetName}.sol/${facetName}.json`,
+            `./artifacts/contracts/GNUADAOdiamond/${facetName}.sol/${facetName}.json`,
             `./artifacts/contracts/${this.options.diamondName.toLowerCase()}/${facetName}.sol/${facetName}.json`,
             `./artifacts/contracts/${this.diamond!.contractsPath}/${facetName}.sol/${facetName}.json`,
             `./artifacts/contracts-starter/contracts/facets/${facetName}.sol/${facetName}.json`,
@@ -510,7 +510,7 @@ export async function generateDiamondAbi(
 
 // CLI support
 if (require.main === module) {
-  const diamondName = process.argv[2] || 'ExampleDiamond';
+  const diamondName = process.argv[2] || 'GNUADAODiamond';
   const verbose = process.argv.includes('--verbose');
   
   const options: DiamondAbiGenerationOptions = {

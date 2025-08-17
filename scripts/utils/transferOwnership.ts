@@ -1,6 +1,6 @@
 import { ethers, network } from 'hardhat';
 import { parseEther, formatEther } from 'ethers';
-import { ExampleDiamond } from '../../diamond-typechain-types'; // Update the path to your typechain types
+import { GNUSDAODiamond } from '../../diamond-typechain-types'; // Update the path to your typechain types
 import { INetworkDeployInfo } from '../common'; // Update the path to your common types
 
 async function main(networkDeployInfo: INetworkDeployInfo) {
@@ -33,13 +33,13 @@ async function main(networkDeployInfo: INetworkDeployInfo) {
     value: fundAmount,
   });
 
-  // Connect to the ExampleDiamond (ownership functions are part of the diamond)
-  console.log(`Connecting to ExampleDiamond at: ${DiamondAddress}`);
+  // Connect to the GNUSDAODiamond (ownership functions are part of the diamond)
+  console.log(`Connecting to GNUSDAODiamond at: ${DiamondAddress}`);
   const ownershipFacet = (await ethers.getContractAt(
     'ExampleOwnershipFacet',
     DiamondAddress,
     deployerSigner,
-  )) as unknown as ExampleDiamond;
+  )) as unknown as GNUSDAODiamond;
 
   // Transfer ownership to the deployer address
   console.log(`Transferring contract ownership to: ${DeployerAddress}`);

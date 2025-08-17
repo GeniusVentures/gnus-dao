@@ -79,7 +79,7 @@ function runCommand(command: string, args: string[], options: any = {}): Promise
 
 // CLI support
 if (require.main === module) {
-  const diamondName = process.argv[2] || 'ExampleDiamond';
+  const diamondName = process.argv[2] || 'GNUADAODiamond';
   const verbose = process.argv.includes('--verbose');
   
   const options: DiamondAbiGenerationOptions = {

@@ -2,7 +2,7 @@
 
 /**
  * Upgrade script for RPC-based Diamond upgrades
- * Upgrades example Diamond contracts using RPCDiamondDeployer
+ * Upgrades GNUS DAO Diamond contracts using RPCDiamondDeployer
  */
 
 import chalk from 'chalk';

@@ -16,7 +16,7 @@ describe('Error Handling Unit Tests', function () {
     signer = signers[0];
 
     validConfig = {
-      diamondName: 'ExampleDiamond',
+      diamondName: 'GNUSDAODiamond',
       networkName: 'hardhat',
       chainId: 31337,
       apiKey: 'test_api_key',
@@ -27,7 +27,7 @@ describe('Error Handling Unit Tests', function () {
       via: signer.address,
       provider: ethers.provider,
       signer: signer,
-      configFilePath: 'diamonds/ExampleDiamond/examplediamond.config.json'
+      configFilePath: 'diamonds/GNUSDAODiamond/gnusdaodiamond.config.json'
     };
   });
 
@@ -156,7 +156,7 @@ describe('Error Handling Unit Tests', function () {
 
       // The createConfigFromEnv doesn't validate - it just creates config with empty values
       // The validation happens during getInstance
-      const config = DefenderDiamondDeployer.createConfigFromEnv({ diamondName: 'ExampleDiamond', networkName: 'hardhat' });
+      const config = DefenderDiamondDeployer.createConfigFromEnv({ diamondName: 'GNUSDAODiamond', networkName: 'hardhat' });
       expect(config.apiKey).to.equal('');
     });
 
@@ -176,7 +176,7 @@ describe('Error Handling Unit Tests', function () {
       process.env.DEFENDER_RELAYER_ADDRESS = signer.address;
       process.env.DEFENDER_GAS_LIMIT = 'invalid_number';
 
-      const config = DefenderDiamondDeployer.createConfigFromEnv({ diamondName: 'ExampleDiamond', networkName: 'hardhat' });
+      const config = DefenderDiamondDeployer.createConfigFromEnv({ diamondName: 'GNUSDAODiamond', networkName: 'hardhat' });
       
       // Should use default values when parsing fails
       expect(config.autoApprove).to.be.a('boolean');

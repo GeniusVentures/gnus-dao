@@ -13,14 +13,14 @@ describe("RPCDiamondDeployer - Hardhat Integration", function () {
     describe("Hardhat Configuration Loading", function () {
         it("should load diamond configuration from hardhat-diamonds", function () {
             try {
-                const diamondConfig = RPCDiamondDeployer.getDiamondConfigFromHardhat('ExampleDiamond');
+                const diamondConfig = RPCDiamondDeployer.getDiamondConfigFromHardhat('GNUSDAODiamond');
                 
                 expect(diamondConfig).to.be.an('object');
                 expect(diamondConfig).to.have.property('deploymentsPath');
                 expect(diamondConfig).to.have.property('contractsPath');
                 expect(diamondConfig.deploymentsPath).to.equal('diamonds');
                 // This should be updated to reflect the diamond contracts subdirectory
-                expect(diamondConfig.contractsPath).to.equal('contracts/examplediamond');
+                expect(diamondConfig.contractsPath).to.equal('contracts/gnusdaodiamond');
             } catch (error) {
                 expect.fail(`Failed to load diamond configuration: ${(error as Error).message}`);
             }
@@ -63,14 +63,14 @@ describe("RPCDiamondDeployer - Hardhat Integration", function () {
             
             try {
                 const config = RPCDiamondDeployer.createConfigFromHardhat(
-                    'ExampleDiamond',
+                    'GNUSDAODiamond',
                     'sepolia',
                     testPrivateKey
                 );
                 
                 expect(config).to.be.an('object');
                 // This should be updated to reflect the Diamonds contract name
-                expect(config.diamondName).to.equal('ExampleDiamond');
+                expect(config.diamondName).to.equal('GNUSDAODiamond');
                 expect(config.networkName).to.equal('sepolia');
                 expect(config.chainId).to.equal(11155111);
                 // Check that we got a valid RPC URL (should be from .env file)
@@ -79,9 +79,9 @@ describe("RPCDiamondDeployer - Hardhat Integration", function () {
                 expect(config.privateKey).to.equal(testPrivateKey);
                 expect(config.deploymentsPath).to.equal('diamonds');
                 // This should be updated to the Diamond contracts subdirectory
-                // expect(config.contractsPath).to.equal('contracts/ExampleDiamond/');
+                // expect(config.contractsPath).to.equal('contracts/GNUSDAODiamond/');
                 // This should be updated to the Diamond config file path
-                expect(config.configFilePath).to.include('diamonds/ExampleDiamond/examplediamond.config.json');
+                expect(config.configFilePath).to.include('diamonds/GNUSDAODiamond/gnusdaodiamond.config.json');
             } catch (error) {
                 expect.fail(`Failed to create configuration from hardhat: ${(error as Error).message}`);
             }
@@ -92,7 +92,7 @@ describe("RPCDiamondDeployer - Hardhat Integration", function () {
             
             try {
                 const config = RPCDiamondDeployer.createConfigFromHardhat(
-                    'ExampleDiamond',
+                    'GNUSDAODiamond',
                     'sepolia',
                     testPrivateKey,
                     {
@@ -119,7 +119,7 @@ describe("RPCDiamondDeployer - Hardhat Integration", function () {
             
             try {
                 const config = RPCDiamondDeployer.createConfigFromHardhat(
-                    'ExampleDiamond',
+                    'GNUSDAODiamond',
                     'sepolia',
                     testPrivateKey
                 );
@@ -133,7 +133,7 @@ describe("RPCDiamondDeployer - Hardhat Integration", function () {
                 const deployer = await RPCDiamondDeployer.getInstance(config);
                 
                 expect(deployer).to.be.instanceOf(RPCDiamondDeployer);
-                expect(deployer.getConfig().diamondName).to.equal('ExampleDiamond');
+                expect(deployer.getConfig().diamondName).to.equal('GNUSDAODiamond');
                 expect(deployer.getConfig().networkName).to.equal('sepolia');
                 expect(deployer.getConfig().chainId).to.equal(11155111);
                 
@@ -149,7 +149,7 @@ describe("RPCDiamondDeployer - Hardhat Integration", function () {
             
             try {
                 const config = RPCDiamondDeployer.createConfigFromHardhat(
-                    'ExampleDiamond',
+                    'GNUSDAODiamond',
                     'sepolia',
                     testPrivateKey
                 );

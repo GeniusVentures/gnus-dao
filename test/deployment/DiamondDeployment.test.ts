@@ -19,11 +19,11 @@ import {
 	IDiamondCut__factory,
 	IDiamondLoupe__factory,
 } from '../../typechain-types';
-import { ExampleDiamond } from '../../diamond-typechain-types';
+import { GNUSDAODiamond } from '../../diamond-typechain-types';
 import { loadDiamondContract } from '../../scripts/utils/loadDiamondArtifact';
 
 describe('🧪 Multichain Fork and Diamond Deployment Tests', async function () {
-	const diamondName = 'ExampleDiamond';
+	const diamondName = 'GNUSDAODiamond';
 	const log: debug.Debugger = debug(`Deploy:log:${diamondName}`);
 	this.timeout(0);
 
@@ -47,11 +47,11 @@ describe('🧪 Multichain Fork and Diamond Deployment Tests', async function () 
 			// let signer2: string;
 			let owner: string;
 			let ownerSigner: SignerWithAddress;
-			let geniusDiamond: ExampleDiamond;
-			// let signer0Diamond: ExampleDiamond;
-			// let signer1Diamond: ExampleDiamond;
-			// let signer2Diamond: ExampleDiamond;
-			let ownerDiamond: ExampleDiamond;
+			let geniusDiamond: GNUSDAODiamond;
+			// let signer0Diamond: GNUSDAODiamond;
+			// let signer1Diamond: GNUSDAODiamond;
+			// let signer2Diamond: GNUSDAODiamond;
+			let ownerDiamond: GNUSDAODiamond;
 
 			let ethersMultichain: typeof ethers;
 			let snapshotId: string;
@@ -63,20 +63,20 @@ describe('🧪 Multichain Fork and Diamond Deployment Tests', async function () 
 					provider: provider,
 					chainId: (await provider.getNetwork()).chainId,
 					writeDeployedDiamondData: false,
-					configFilePath: `diamonds/ExampleDiamond/examplediamond.config.json`,
+					configFilePath: `diamonds/GNUSDAODiamond/gnusdaodiamond.config.json`,
 				} as LocalDiamondDeployerConfig;
 				const diamondDeployer = await LocalDiamondDeployer.getInstance(config);
 				await diamondDeployer.setVerbose(true);
 				diamond = await diamondDeployer.getDiamondDeployed();
 				const deployedDiamondData = diamond.getDeployedDiamondData();
 
-        let geniusDiamondPlain: ExampleDiamond;
+        let geniusDiamondPlain: GNUSDAODiamond;
         
         
-				let geniusDiamondContract: ExampleDiamond;
+				let geniusDiamondContract: GNUSDAODiamond;
 				
 				// Load the Diamond contract using the utility function
-				geniusDiamondContract = await loadDiamondContract<ExampleDiamond>(diamond, deployedDiamondData.DiamondAddress!);
+				geniusDiamondContract = await loadDiamondContract<GNUSDAODiamond>(diamond, deployedDiamondData.DiamondAddress!);
 				geniusDiamond = geniusDiamondContract;
 
 				ethersMultichain = ethers;

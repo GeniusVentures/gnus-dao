@@ -55,7 +55,7 @@ describe('DefenderDeployment Integration Tests', function () {
     const [signer] = await ethers.getSigners();
     
     validConfig = {
-      diamondName: 'ExampleDiamond',
+      diamondName: 'GNUSDAODiamond',
       networkName: 'hardhat',
       chainId: 31337,
       apiKey: 'test_api_key',
@@ -69,9 +69,9 @@ describe('DefenderDeployment Integration Tests', function () {
       // Add required DiamondConfig fields
       deploymentsPath: 'test-diamonds',
       contractsPath: 'contracts',
-      configFilePath: 'test-diamonds/ExampleDiamond/examplediamond.config.json',
-      callbacksPath: 'test-diamonds/ExampleDiamond/callbacks',
-      diamondAbiPath: 'test-diamonds/ExampleDiamond/abi',
+      configFilePath: 'test-diamonds/GNUSDAODiamond/gnusdaodiamond.config.json',
+      callbacksPath: 'test-diamonds/GNUSDAODiamond/callbacks',
+      diamondAbiPath: 'test-diamonds/GNUSDAODiamond/abi',
       writeDeployedDiamondData: true
     };
   });  describe('End-to-End Deployment Workflow', function () {
@@ -183,12 +183,12 @@ describe('DefenderDeployment Integration Tests', function () {
       process.env.AUTO_APPROVE_DEFENDER_PROPOSALS = 'true';
 
       const config = DefenderDiamondDeployer.createConfigFromEnv({
-        diamondName: 'ExampleDiamond',
+        diamondName: 'GNUSDAODiamond',
         networkName: 'hardhat',
         chainId: 31337
       });
 
-      expect(config.diamondName).to.equal('ExampleDiamond');
+      expect(config.diamondName).to.equal('GNUSDAODiamond');
       expect(config.networkName).to.equal('hardhat');
       expect(config.chainId).to.equal(31337);
       expect(config.apiKey).to.equal('env_test_key');
@@ -209,7 +209,7 @@ describe('DefenderDeployment Integration Tests', function () {
       process.env.DEFENDER_SAFE_ADDRESS = signer.address;
 
       const config = DefenderDiamondDeployer.createConfigFromEnv({
-        diamondName: 'ExampleDiamond',
+        diamondName: 'GNUSDAODiamond',
         chainId: 31337
       });
 
@@ -250,13 +250,13 @@ describe('DefenderDeployment Integration Tests', function () {
         expect(diamond).to.have.property('diamondName');
       } else {
         // If diamond is not deployed, verify the configuration was set correctly
-        expect(validConfig.diamondName).to.equal('ExampleDiamond');
+        expect(validConfig.diamondName).to.equal('GNUSDAODiamond');
       }
     });
 
     it('should handle different diamond configurations', async function () {
-      // Use only ExampleDiamond since it has existing configuration
-      const config = { ...validConfig, diamondName: 'ExampleDiamond' };
+      // Use only GNUSDAODiamond since it has existing configuration
+      const config = { ...validConfig, diamondName: 'GNUSDAODiamond' };
       const instance = await DefenderDiamondDeployer.getInstance(config);
       const diamond = instance.getDiamondDeployed();
       
@@ -264,10 +264,10 @@ describe('DefenderDeployment Integration Tests', function () {
       expect(instance).to.be.instanceOf(DefenderDiamondDeployer);
       
       if (diamond) {
-        expect(diamond.diamondName).to.equal('ExampleDiamond');
+        expect(diamond.diamondName).to.equal('GNUSDAODiamond');
       } else {
         // If diamond is not deployed, verify the configuration was set correctly  
-        expect(config.diamondName).to.equal('ExampleDiamond');
+        expect(config.diamondName).to.equal('GNUSDAODiamond');
       }
     });
   });
@@ -322,7 +322,7 @@ describe('DefenderDeployment Integration Tests', function () {
     it('should create different instances for different configurations', async function () {
       const config1 = { ...validConfig, defenderDiamondDeployerKey: 'config1' }; // Explicit key
       const config2 = { ...validConfig, networkName: 'sepolia', chainId: 11155111 }; // Different network  
-      const config3 = { ...validConfig, diamondName: 'ExampleDiamond', networkName: 'polygon', chainId: 137 }; // Different network
+      const config3 = { ...validConfig, diamondName: 'GNUSDAODiamond', networkName: 'polygon', chainId: 137 }; // Different network
       
       const instance1 = await DefenderDiamondDeployer.getInstance(config1);
       const instance2 = await DefenderDiamondDeployer.getInstance(config2);

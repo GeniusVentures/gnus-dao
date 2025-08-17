@@ -1,6 +1,6 @@
 # RPC Deployment Scripts
 
-This directory contains comprehensive deployment, upgrade, and verification tools for example Diamond contracts using RPC-based deployment infrastructure. These scripts provide robust, production-ready deployment capabilities with extensive configuration options and error handling.
+This directory contains comprehensive deployment, upgrade, and verification tools for GNUS DAO Diamond contracts using RPC-based deployment infrastructure. These scripts provide robust, production-ready deployment capabilities with extensive configuration options and error handling.
 
 ## 📁 Contents
 
@@ -19,22 +19,22 @@ This directory contains comprehensive deployment, upgrade, and verification tool
 
 ```bash
 # Deploy to testnet (e.g., Sepolia)
-npx ts-node scripts/deploy/rpc/deploy-rpc.ts ExampleDiamond sepolia
+npx ts-node scripts/deploy/rpc/deploy-rpc.ts GNUSDAODiamond sepolia
 
 # Deploy to mainnet
-npx ts-node scripts/deploy/rpc/deploy-rpc.ts ExampleDiamond mainnet
+npx ts-node scripts/deploy/rpc/deploy-rpc.ts GNUSDAODiamond mainnet
 ```
 
 ### Check Deployment Status
 
 ```bash
-npx ts-node scripts/deploy/rpc/status-rpc.ts ExampleDiamond sepolia --detailed
+npx ts-node scripts/deploy/rpc/status-rpc.ts GNUSDAODiamond sepolia --detailed
 ```
 
 ### Verify Deployment
 
 ```bash
-npx ts-node scripts/deploy/rpc/verify-rpc.ts ExampleDiamond sepolia --etherscan
+npx ts-node scripts/deploy/rpc/verify-rpc.ts GNUSDAODiamond sepolia --etherscan
 ```
 
 ## 🛠️ Detailed Usage
@@ -77,7 +77,7 @@ npx ts-node scripts/deploy/rpc/deploy-rpc.ts <DiamondName> <network>
 **Advanced Options:**
 
 ```bash
-npx ts-node scripts/deploy/rpc/deploy-rpc.ts ExampleDiamond sepolia \
+npx ts-node scripts/deploy/rpc/deploy-rpc.ts GNUSDAODiamond sepolia \
   --rpc-url https://custom-rpc \
   --private-key 0x... \
   --gas-multiplier 1.5 \
@@ -90,10 +90,10 @@ npx ts-node scripts/deploy/rpc/deploy-rpc.ts ExampleDiamond sepolia \
 
 ```bash
 # Legacy format
-npx ts-node scripts/deploy/rpc/deploy-rpc.ts legacy ExampleDiamond sepolia
+npx ts-node scripts/deploy/rpc/deploy-rpc.ts legacy GNUSDAODiamond sepolia
 
 # Quick deployment with minimal output
-npx ts-node scripts/deploy/rpc/deploy-rpc.ts quick ExampleDiamond sepolia
+npx ts-node scripts/deploy/rpc/deploy-rpc.ts quick GNUSDAODiamond sepolia
 ```
 
 #### `deploy-rpc-manual.ts` - Interactive Deployment
@@ -101,7 +101,7 @@ npx ts-node scripts/deploy/rpc/deploy-rpc.ts quick ExampleDiamond sepolia
 Step-by-step deployment with user confirmations at each stage.
 
 ```bash
-npx ts-node scripts/deploy/rpc/deploy-rpc-manual.ts ExampleDiamond sepolia \
+npx ts-node scripts/deploy/rpc/deploy-rpc-manual.ts GNUSDAODiamond sepolia \
   --debug \
   --verbose
 ```
@@ -122,13 +122,13 @@ Handles Diamond contract upgrades with comprehensive analysis.
 **Basic Upgrade:**
 
 ```bash
-npx ts-node scripts/deploy/rpc/upgrade-rpc.ts ExampleDiamond sepolia
+npx ts-node scripts/deploy/rpc/upgrade-rpc.ts GNUSDAODiamond sepolia
 ```
 
 **Dry Run Analysis:**
 
 ```bash
-npx ts-node scripts/deploy/rpc/upgrade-rpc.ts ExampleDiamond sepolia \
+npx ts-node scripts/deploy/rpc/upgrade-rpc.ts GNUSDAODiamond sepolia \
   --dry-run \
   --verbose
 ```
@@ -136,7 +136,7 @@ npx ts-node scripts/deploy/rpc/upgrade-rpc.ts ExampleDiamond sepolia \
 **Advanced Options:**
 
 ```bash
-npx ts-node scripts/deploy/rpc/upgrade-rpc.ts ExampleDiamond sepolia \
+npx ts-node scripts/deploy/rpc/upgrade-rpc.ts GNUSDAODiamond sepolia \
   --target-version 2.0.0 \
   --force \
   --skip-analysis
@@ -157,10 +157,10 @@ Comprehensive status reporting for deployed contracts.
 
 ```bash
 # Basic status
-npx ts-node scripts/deploy/rpc/status-rpc.ts ExampleDiamond sepolia
+npx ts-node scripts/deploy/rpc/status-rpc.ts GNUSDAODiamond sepolia
 
 # Detailed status with facet information
-npx ts-node scripts/deploy/rpc/status-rpc.ts ExampleDiamond sepolia \
+npx ts-node scripts/deploy/rpc/status-rpc.ts GNUSDAODiamond sepolia \
   --detailed \
   --show-facets \
   --verbose
@@ -182,10 +182,10 @@ Validates deployment integrity and performs Etherscan verification.
 
 ```bash
 # Basic verification
-npx ts-node scripts/deploy/rpc/verify-rpc.ts ExampleDiamond sepolia
+npx ts-node scripts/deploy/rpc/verify-rpc.ts GNUSDAODiamond sepolia
 
 # Full verification with Etherscan
-npx ts-node scripts/deploy/rpc/verify-rpc.ts ExampleDiamond sepolia \
+npx ts-node scripts/deploy/rpc/verify-rpc.ts GNUSDAODiamond sepolia \
   --etherscan \
   --check-all \
   --verbose
@@ -244,7 +244,7 @@ npx ts-node scripts/deploy/rpc/verify-rpc.ts ExampleDiamond sepolia \
 
    ```bash
    # Archive or remove previous deployment records
-   mv deployments/ExampleDiamond/sepolia deployments/archive/
+   mv deployments/GNUSDAODiamond/sepolia deployments/archive/
    ```
 
 2. **Set Environment**
@@ -257,19 +257,19 @@ npx ts-node scripts/deploy/rpc/verify-rpc.ts ExampleDiamond sepolia \
 3. **Deploy Diamond**
 
    ```bash
-   npx ts-node scripts/deploy/rpc/deploy-rpc.ts ExampleDiamond sepolia --verbose
+   npx ts-node scripts/deploy/rpc/deploy-rpc.ts GNUSDAODiamond sepolia --verbose
    ```
 
 4. **Verify Deployment**
 
    ```bash
-   npx ts-node scripts/deploy/rpc/verify-rpc.ts ExampleDiamond sepolia --etherscan
+   npx ts-node scripts/deploy/rpc/verify-rpc.ts GNUSDAODiamond sepolia --etherscan
    ```
 
 5. **Check Status**
 
    ```bash
-   npx ts-node scripts/deploy/rpc/status-rpc.ts ExampleDiamond sepolia --detailed
+   npx ts-node scripts/deploy/rpc/status-rpc.ts GNUSDAODiamond sepolia --detailed
    ```
 
 ### Testnet Upgrade Procedure
@@ -277,19 +277,19 @@ npx ts-node scripts/deploy/rpc/verify-rpc.ts ExampleDiamond sepolia \
 1. **Analyze Upgrade**
 
    ```bash
-   npx ts-node scripts/deploy/rpc/upgrade-rpc.ts ExampleDiamond sepolia --dry-run
+   npx ts-node scripts/deploy/rpc/upgrade-rpc.ts GNUSDAODiamond sepolia --dry-run
    ```
 
 2. **Execute Upgrade**
 
    ```bash
-   npx ts-node scripts/deploy/rpc/upgrade-rpc.ts ExampleDiamond sepolia --verbose
+   npx ts-node scripts/deploy/rpc/upgrade-rpc.ts GNUSDAODiamond sepolia --verbose
    ```
 
 3. **Verify Upgrade**
 
    ```bash
-   npx ts-node scripts/deploy/rpc/verify-rpc.ts ExampleDiamond sepolia --check-all
+   npx ts-node scripts/deploy/rpc/verify-rpc.ts GNUSDAODiamond sepolia --check-all
    ```
 
 ### Mainnet Deployment Procedure
@@ -305,20 +305,20 @@ npx ts-node scripts/deploy/rpc/verify-rpc.ts ExampleDiamond sepolia \
 2. **Deploy with Manual Confirmations**
 
    ```bash
-   npx ts-node scripts/deploy/rpc/deploy-rpc-manual.ts ExampleDiamond mainnet --verbose
+   npx ts-node scripts/deploy/rpc/deploy-rpc-manual.ts GNUSDAODiamond mainnet --verbose
    ```
 
 3. **Comprehensive Verification**
 
    ```bash
-   npx ts-node scripts/deploy/rpc/verify-rpc.ts ExampleDiamond mainnet \
+   npx ts-node scripts/deploy/rpc/verify-rpc.ts GNUSDAODiamond mainnet \
      --etherscan --check-all --verbose
    ```
 
 4. **Final Status Check**
 
    ```bash
-   npx ts-node scripts/deploy/rpc/status-rpc.ts ExampleDiamond mainnet --detailed
+   npx ts-node scripts/deploy/rpc/status-rpc.ts GNUSDAODiamond mainnet --detailed
    ```
 
 ## 📝 Post-Deployment Tasks
@@ -327,8 +327,8 @@ npx ts-node scripts/deploy/rpc/verify-rpc.ts ExampleDiamond sepolia \
 
    ```bash
    git add deployments/
-   git commit -m "Deploy ExampleDiamond to [network] - [diamond-address]"
-   git tag -a v[version] -m "ExampleDiamond deployment v[version]"
+   git commit -m "Deploy GNUSDAODiamond to [network] - [diamond-address]"
+   git tag -a v[version] -m "GNUSDAODiamond deployment v[version]"
    ```
 
 2. **Update Documentation**
@@ -379,7 +379,7 @@ npx ts-node scripts/deploy/rpc/verify-rpc.ts ExampleDiamond sepolia \
 For detailed debugging, use:
 
 ```bash
-npx ts-node scripts/deploy/rpc/deploy-rpc-manual.ts ExampleDiamond sepolia \
+npx ts-node scripts/deploy/rpc/deploy-rpc-manual.ts GNUSDAODiamond sepolia \
   --debug --verbose
 ```
 

@@ -131,9 +131,9 @@ async function performOnChainValidation(diamond: any, provider: ethers.JsonRpcPr
     if (code.length > 2) {
       // Try to get protocol version
       try {
-        const exampleABI = ["function protocolVersion() external view returns (uint256)"];
-        const exampleDiamond = new ethers.Contract(diamondAddress, exampleABI, provider);
-        const protocolVersion = await exampleDiamond.protocolVersion();
+        const gnusDaoABI = ["function protocolVersion() external view returns (uint256)"];
+        const gnusDaoDiamond = new ethers.Contract(diamondAddress, gnusDaoABI, provider);
+        const protocolVersion = await gnusDaoDiamond.protocolVersion();
         console.log(`📋 Protocol Version: ${chalk.white(protocolVersion)}`);
       } catch (error) {
         console.log(chalk.yellow('⚠️  Protocol version not available'));

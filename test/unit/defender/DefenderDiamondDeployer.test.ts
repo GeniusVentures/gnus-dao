@@ -14,10 +14,10 @@ describe("DefenderDiamondDeployer", function () {
         process.env.DEFENDER_RELAYER_ADDRESS = "0x1234567890abcdef1234567890abcdef12345678";
         process.env.DEFENDER_SAFE_ADDRESS = "0x9876543210fedcba9876543210fedcba98765432";
         process.env.NETWORK = "sepolia";
-        process.env.DIAMOND_NAME = "ExampleDiamond";
+        process.env.DIAMOND_NAME = "GNUSDAODiamond";
         
         config = {
-            diamondName: "ExampleDiamond",
+            diamondName: "GNUSDAODiamond",
             networkName: "sepolia",
             chainId: 11155111,
             apiKey: "test-api-key",
@@ -28,7 +28,7 @@ describe("DefenderDiamondDeployer", function () {
             autoApprove: false,
             verbose: false,
             deploymentsPath: "./deployments-test",
-            configFilePath: "diamonds/ExampleDiamond/examplediamond.config.json"
+            configFilePath: "diamonds/GNUSDAODiamond/gnusdaodiamond.config.json"
         };
     });
 
@@ -48,7 +48,7 @@ describe("DefenderDiamondDeployer", function () {
     describe("Configuration Validation", function () {
         it("should validate required configuration fields", function () {
             const validConfig: DefenderDiamondDeployerConfig = {
-                diamondName: "ExampleDiamond",
+                diamondName: "GNUSDAODiamond",
                 networkName: "sepolia",
                 chainId: 11155111,
                 apiKey: "test-api-key",
@@ -58,10 +58,10 @@ describe("DefenderDiamondDeployer", function () {
                 viaType: "Safe",
                 autoApprove: false,
                 deploymentsPath: "./deployments-test",
-                configFilePath: "diamonds/ExampleDiamond/examplediamond.config.json"
+                configFilePath: "diamonds/GNUSDAODiamond/gnusdaodiamond.config.json"
             };
 
-            expect(validConfig.diamondName).to.equal("ExampleDiamond");
+            expect(validConfig.diamondName).to.equal("GNUSDAODiamond");
             expect(validConfig.apiKey).to.equal("test-api-key");
             expect(validConfig.apiSecret).to.equal("test-secret-key");
             expect(validConfig.relayerAddress).to.equal("0x1234567890abcdef1234567890abcdef12345678");
@@ -72,7 +72,7 @@ describe("DefenderDiamondDeployer", function () {
 
         it("should accept Safe multisig configuration", function () {
             const safeConfig: DefenderDiamondDeployerConfig = {
-                diamondName: "ExampleDiamond",
+                diamondName: "GNUSDAODiamond",
                 networkName: "sepolia",
                 chainId: 11155111,
                 apiKey: "test-api-key",
@@ -81,7 +81,7 @@ describe("DefenderDiamondDeployer", function () {
                 via: "0x9876543210fedcba9876543210fedcba98765432",
                 viaType: "Safe",
                 deploymentsPath: "./deployments-test",
-                configFilePath: "diamonds/ExampleDiamond/examplediamond.config.json"
+                configFilePath: "diamonds/GNUSDAODiamond/gnusdaodiamond.config.json"
             };
 
             expect(safeConfig.via).to.equal("0x9876543210fedcba9876543210fedcba98765432");
@@ -90,7 +90,7 @@ describe("DefenderDiamondDeployer", function () {
 
         it("should accept EOA wallet configuration", function () {
             const eoaConfig: DefenderDiamondDeployerConfig = {
-                diamondName: "ExampleDiamond",
+                diamondName: "GNUSDAODiamond",
                 networkName: "sepolia",
                 chainId: 11155111,
                 apiKey: "test-api-key",
@@ -99,7 +99,7 @@ describe("DefenderDiamondDeployer", function () {
                 via: "0x5555555555555555555555555555555555555555",
                 viaType: "EOA",
                 deploymentsPath: "./deployments-test",
-                configFilePath: "diamonds/ExampleDiamond/examplediamond.config.json"
+                configFilePath: "diamonds/GNUSDAODiamond/gnusdaodiamond.config.json"
             };
 
             expect(eoaConfig.via).to.equal("0x5555555555555555555555555555555555555555");
@@ -206,7 +206,7 @@ describe("DefenderDiamondDeployer", function () {
             const currentConfig = deployer.getConfig();
             
             expect(currentConfig).to.not.be.undefined;
-            expect(currentConfig.diamondName).to.equal("ExampleDiamond");
+            expect(currentConfig.diamondName).to.equal("GNUSDAODiamond");
             expect(currentConfig.networkName).to.equal("sepolia");
         });
     });

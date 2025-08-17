@@ -5,7 +5,7 @@ import { DiamondAbiGenerationOptions, generateDiamondAbi, ProjectDiamondAbiGener
 
 describe('Diamond ABI Generator', () => {
   const testOutputDir = './test-output/diamond-abi';
-  const diamondName = 'ExampleDiamond';
+  const diamondName = 'GNUSDAODiamond';
 
   beforeEach(() => {
     // Clean up any existing test output
@@ -34,7 +34,7 @@ describe('Diamond ABI Generator', () => {
     // TODO fix or remove.  This likely 
     it('should create generator instance with custom options', () => {
       const generator = new ProjectDiamondAbiGenerator({
-        diamondName: 'ExampleDiamond',
+        diamondName: 'GNUSDAODiamond',
         networkName: 'localhost',
         chainId: 31337,
         outputDir: testOutputDir,
@@ -46,7 +46,7 @@ describe('Diamond ABI Generator', () => {
   });
 
   describe('generateDiamondAbi function', () => {
-    it('should generate ABI for ExampleDiamond', async function() {
+    it('should generate ABI for GNUSDAODiamond', async function() {
       this.timeout(30000); // Increase timeout for compilation
       
       const result = await generateDiamondAbi({

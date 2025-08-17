@@ -131,7 +131,7 @@ export interface NetworkInfo {
  * @example
  * ```typescript
  * const config = RPCDiamondDeployer.createConfigFromEnv({
- *   diamondName: 'ExampleDiamond',
+ *   diamondName: 'GNUSDAODiamond',
  *   networkName: 'sepolia',
  *   rpcUrl: 'https://sepolia.infura.io/v3/your-key',
  *   privateKey: '0x...'
@@ -392,7 +392,7 @@ export class RPCDiamondDeployer {
     }
 
     const config: RPCDiamondDeployerConfig = {
-      diamondName: process.env.DIAMOND_NAME || 'ExampleDiamond',
+      diamondName: process.env.DIAMOND_NAME || 'GNUSDAODiamond',
       rpcUrl: process.env.RPC_URL!,
       privateKey: process.env.PRIVATE_KEY!,
       networkName: process.env.NETWORK_NAME || 'unknown',

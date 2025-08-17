@@ -19,7 +19,7 @@ describe("RPC Deployment Integration", function () {
         const [signer] = await ethers.getSigners();
         
         config = {
-            diamondName: "ExampleDiamond",
+            diamondName: "GNUSDAODiamond",
             networkName: "hardhat",
             chainId: 31337,
             rpcUrl: "http://localhost:8545",
@@ -29,7 +29,7 @@ describe("RPC Deployment Integration", function () {
             retryDelayMs: 1000,
             verbose: true,
             deploymentsPath: "./deployments-test",
-            configFilePath: "diamonds/ExampleDiamond/examplediamond.config.json",
+            configFilePath: "diamonds/GNUSDAODiamond/gnusdaodiamond.config.json",
             writeDeployedDiamondData: false, // Don't write to file system during tests
         };
     });
