@@ -1,0 +1,3 @@
+[submodule "contracts/gnus-dao"]
+	path = contracts/gnus-dao
+	url = git@github.com:GeniusVentures/gnus-dao-contracts.git
