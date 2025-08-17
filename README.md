@@ -1,4 +1,4 @@
-# Diamonds for Hardhat Boilerplate
+# Diamonds Base Project & Boilerplate
 
 This is a boilerplate project for building modular and upgradeable smart contracts using the EIP-2535 Diamond Standard with Hardhat.
 
