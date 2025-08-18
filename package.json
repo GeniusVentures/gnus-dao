@@ -6,6 +6,7 @@
   "scripts": {
     "test": "npx hardhat test",
     "clean": "npx hardhat clean",
+    "diamond-clean": "rm -rf diamond-typechain-types diamond-abi && npx hardhat clean",
     "compile": "npx hardhat compile &&  npx ts-node scripts/generate-diamond-abi-with-typechain.ts",
     "coverage": "npx hardhat coverage",
     "build": "npx tsc && npx hardhat compile && npx ts-node scripts/generate-diamond-abi-with-typechain.ts",
