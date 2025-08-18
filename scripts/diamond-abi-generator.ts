@@ -307,6 +307,8 @@ export class ProjectDiamondAbiGenerator {
 
           // Try to load the contract artifact
           const artifactPaths = [
+            // TODO This should pick up the path from the hardhat-diamonds config
+            `./artifacts/contracts/gnus-dao/${facetName}.sol/${facetName}.json`,
             `./artifacts/contracts/${facetName}.sol/${facetName}.json`,
             `./artifacts/contracts/GNUSDAOdiamond/${facetName}.sol/${facetName}.json`,
             `./artifacts/contracts/${this.options.diamondName.toLowerCase()}/${facetName}.sol/${facetName}.json`,
