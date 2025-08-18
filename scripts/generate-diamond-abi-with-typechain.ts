@@ -11,11 +11,12 @@ async function generateDiamondAbiWithTypechain(options: DiamondAbiGenerationOpti
     console.log(chalk.blue(`🚀 Generating Diamond ABI for ${options.diamondName}...`));
     
     const result = await generateDiamondAbi(options);
-
-    console.log(chalk.green(`✅ Diamond ABI generated: ${result.outputPath}`));
-    console.log(chalk.blue(`   Functions: ${result.stats.totalFunctions}`));
-    console.log(chalk.blue(`   Events: ${result.stats.totalEvents}`));
-    console.log(chalk.blue(`   Facets: ${result.stats.facetCount}`));
+    if (options.verbose) {
+      console.log(chalk.green(`✅ Diamond ABI generated: ${result.outputPath}`));
+      console.log(chalk.blue(`   Functions: ${result.stats.totalFunctions}`));
+      console.log(chalk.blue(`   Events: ${result.stats.totalEvents}`));
+      console.log(chalk.blue(`   Facets: ${result.stats.facetCount}`));
+    }
 
     // Generate TypeScript types directly using TypeChain
     console.log(chalk.blue('🔧 Regenerating TypeChain types for Diamond...'));
@@ -79,7 +80,7 @@ function runCommand(command: string, args: string[], options: any = {}): Promise
 
 // CLI support
 if (require.main === module) {
-  const diamondName = process.argv[2] || 'GNUADAODiamond';
+  const diamondName = process.argv[2] || 'GNUSDAODiamond';
   const verbose = process.argv.includes('--verbose');
   
   const options: DiamondAbiGenerationOptions = {

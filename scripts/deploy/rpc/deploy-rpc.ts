@@ -2,10 +2,10 @@
 
 /**
  * Main deployment script for RPC-based Diamond deployment
- * Deploys GNUADAO Diamond contracts using RPCDiamondDeployer
+ * Deploys GNUSDAO Diamond contracts using RPCDiamondDeployer
  */
 
-import { RPCDiamondDeployer } from '../../setup/rpc/RPCDiamondDeployer';
+import { RPCDiamondDeployer } from '../../setup/RPCDiamondDeployer';
 import {
   DeploymentOptions,
   setupProgram,

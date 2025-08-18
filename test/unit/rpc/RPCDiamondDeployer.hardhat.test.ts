@@ -20,7 +20,7 @@ describe("RPCDiamondDeployer - Hardhat Integration", function () {
                 expect(diamondConfig).to.have.property('contractsPath');
                 expect(diamondConfig.deploymentsPath).to.equal('diamonds');
                 // This should be updated to reflect the diamond contracts subdirectory
-                expect(diamondConfig.contractsPath).to.equal('contracts/gnusdaodiamond');
+                expect(diamondConfig.contractsPath).to.equal('contracts/gnus-dao');
             } catch (error) {
                 expect.fail(`Failed to load diamond configuration: ${(error as Error).message}`);
             }

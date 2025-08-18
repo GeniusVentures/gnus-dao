@@ -699,6 +699,8 @@ export class RPCDiamondDeployer {
         console.log(chalk.gray(`   Block Number: ${networkInfo.blockNumber}`));
       }
     } catch (error) {
+      const networkInfo = await this.getNetworkInfo();
+      console.error(chalk.red(`❌ Network validation NetworkInfo: ${networkInfo}`));
       throw new Error(`Network connection validation failed: ${(error as Error).message}`);
     }
   }
