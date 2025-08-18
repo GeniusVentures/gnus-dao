@@ -1,6 +1,6 @@
 import hre, { ethers } from 'hardhat';
 import { toWei } from '../common';
-import { ExampleOwnershipFacet } from '../../typechain-types';
+import { GNUSDAOOwnershipFacet } from '../../typechain-types';
 import { debuglog } from 'util';
 
 /**
@@ -43,8 +43,8 @@ export const updateOwnerForTest = async (rootAddress: string) => {
   // Retrieve the current signer in the Hardhat environment
   const curOwner = (await ethers.getSigners())[0];
 
-  // Get a reference to the ExampleOwnershipFacet contract at the specified root address
-  const ownership = await ethers.getContractAt('ExampleOwnershipFacet', rootAddress) as ExampleOwnershipFacet;
+  // Get a reference to the GNUSDAOOwnershipFacet contract at the specified root address
+  const ownership = await ethers.getContractAt('GNUSDAOOwnershipFacet', rootAddress) as GNUSDAOOwnershipFacet;
 
   // Retrieve the current owner of the contract
   const oldOwnerAddress = await ownership.owner();
