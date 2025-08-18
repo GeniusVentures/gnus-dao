@@ -17,8 +17,6 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@axelar-network/axelarjs-sdk": "^0.15.0",
-    "@axelar-network/interchain-token-service": "^1.2.4",
     "@gnus.ai/contracts-upgradeable-diamond": "=4.5.0",
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
     "@nomicfoundation/hardhat-ethers": "^3.0.0",
