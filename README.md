@@ -37,10 +37,10 @@ A modular, upgradeable smart contract system built on the ERC-2535 Diamond Proxy
     │           Facets                  │
     ├─────────────┬─────────────────────┤
     │ Ownership   │ Access Control      │
-    │ Facet       │ Facet              │
+    │ Facet       │ Facet               │
     ├─────────────┼─────────────────────┤
     │ Diamond     │ Diamond             │
-    │ Cut Facet   │ Loupe Facet        │
+    │ Cut Facet   │ Loupe Facet         │
     ├─────────────┼─────────────────────┤
     │ Init        │ Custom              │
     │ Facet       │ Facets              │
@@ -59,7 +59,7 @@ A modular, upgradeable smart contract system built on the ERC-2535 Diamond Proxy
 
 ### Prerequisites
 
-- Node.js >= 16.0.0
+- Node.js >= 20.0.0
 - Yarn (recommended) or npm
 - Git
 
@@ -67,7 +67,7 @@ A modular, upgradeable smart contract system built on the ERC-2535 Diamond Proxy
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/gnus-dao-diamond.git
+git clone https://github.com/GeniusVentures/gnus-dao.git
 cd gnus-dao-diamond
 
 # Install dependencies
@@ -94,11 +94,6 @@ TEST_PRIVATE_KEY=your_test_private_key_here
 # API Keys for Verification
 ETHERSCAN_API_KEY=your_etherscan_api_key
 POLYGONSCAN_API_KEY=your_polygonscan_api_key
-
-# OpenZeppelin Defender (for production deployments)
-DEFENDER_API_KEY=your_defender_api_key
-DEFENDER_API_SECRET=your_defender_secret
-DEFENDER_RELAYER_ADDRESS=your_relayer_address
 ```
 
 ### Compile Contracts
