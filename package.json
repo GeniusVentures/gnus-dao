@@ -74,6 +74,5 @@
     "uint32": "^0.2.1",
     "web3": "^4.16.0",
     "winston": "^3.17.0"
-  },
-  "packageManager": "yarn@4.9.2"
+  }
 }

@@ -21,8 +21,10 @@ async function generateDiamondAbiWithTypechain(options: DiamondAbiGenerationOpti
     // Generate TypeScript types directly using TypeChain
     console.log(chalk.blue('🔧 Regenerating TypeChain types for Diamond...'));
     
-    await runCommand('npx', [
-      'typechain',
+    // Use direct path to typechain binary to avoid npx PATH issues on Windows
+    const isWindows = process.platform === 'win32';
+    const typechainPath = join(process.cwd(), 'node_modules', '.bin', isWindows ? 'typechain.cmd' : 'typechain');
+    await runCommand(typechainPath, [
       '--target', 'ethers-v6',
       '--out-dir', 'diamond-typechain-types',
       result.outputPath!
@@ -46,6 +48,7 @@ function runCommand(command: string, args: string[], options: any = {}): Promise
   return new Promise((resolve, reject) => {
     const child = spawn(command, args, {
       stdio: 'pipe',
+      shell: true, // Required for Windows
       ...options
     });
 
