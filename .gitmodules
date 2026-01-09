@@ -1,0 +1,6 @@
+[submodule "gnus-dao-diamond-deployer"]
+	path = gnus-dao-diamond-deployer
+	url = https://github.com/GeniusVentures/gnus-dao-diamond-deployer
+[submodule "gnus-dao-website"]
+	path = gnus-dao-website
+	url = https://github.com/GeniusVentures/gnus-dao-website
